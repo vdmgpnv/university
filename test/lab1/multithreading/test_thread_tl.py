@@ -1,8 +1,7 @@
 import unittest
 import time
 
-from lab1.multithreading.sync import check_sites
-
+from lab1.multithreading.thread_tl import check_sites
 
 class TestSync(unittest.TestCase):
     def setUp(self):
@@ -23,5 +22,5 @@ class TestSync(unittest.TestCase):
     def tearDown(self) -> None:
         duration = time.time() - self.start_time
         print(f"{self.id()}: Downloaded {len(self.sites)} in {duration} seconds")
-        print('--------------------------------------------------------')
+        print('-------------------------------------------------------------------')
         

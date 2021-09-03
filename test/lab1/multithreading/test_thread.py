@@ -22,4 +22,5 @@ class TestSync(unittest.TestCase):
     def tearDown(self) -> None:
         duration = time.time() - self.start_time
         print(f"{self.id()}: Downloaded {len(self.sites)} in {duration} seconds")
+        print('-------------------------------------------------------------')
         

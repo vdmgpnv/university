@@ -1,14 +1,21 @@
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, thread
+
+from requests.sessions import session
 from lab1.multithreading.sync import download_site
 import requests
+import threading
 import time
 
 
+thread_local = threading.local()
 
-
+def long_session_init():
+    return requests.Session()
 
 def get_session():
-    return requests.Session()
+    if not hasattr(thread_local, 'session'):
+        thread_local.session = long_session_init()
+    return thread_local.session
 
 
 def download_site(url):
@@ -21,6 +28,6 @@ def download_site(url):
 
 
 def check_sites(sites):
-    with ThreadPoolExecutor(max_workers=20) as thread:
+    with ThreadPoolExecutor(max_workers=50) as thread:
         res = thread.map(download_site, sites)
         return list(res)
