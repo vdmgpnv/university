@@ -3,7 +3,7 @@ import time
 
 from lab1.multithreading.sync import check_sites
 
-
+@unittest.skip
 class TestSync(unittest.TestCase):
     def setUp(self):
         self.start_time = time.time()

@@ -1,9 +1,5 @@
 from concurrent.futures import ThreadPoolExecutor
-from lab1.multithreading.sync import download_site
 import requests
-import time
-
-
 
 
 

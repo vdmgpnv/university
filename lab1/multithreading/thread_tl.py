@@ -1,7 +1,6 @@
 from concurrent.futures import ThreadPoolExecutor, thread
 
 from requests.sessions import session
-from lab1.multithreading.sync import download_site
 import requests
 import threading
 import time
