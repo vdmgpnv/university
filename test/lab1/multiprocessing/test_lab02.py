@@ -1,17 +1,18 @@
 import unittest
 import time
 
-from lab1.multithreading.lab01_thread_tl import collect_proxy
+from lab1.multiprocessing.lab02 import collect_proxy
 
-@unittest.skip
-class Testlab01(unittest.TestCase):
+
+class Testlab02(unittest.TestCase):
     def setUp(self) -> None:
         self.start_time = time.time()
 
 
     def test_collect_proxy(self):
-        self.site = 'https://github.com/TheSpeedX/PROXY-List/blob/master/http.txt'          
+        self.site = 'https://github.com/ShiftyTR/Proxy-List/blob/master/proxy.txt'          
         res = collect_proxy(self.site)
+        
 
 
     def tearDown(self) -> None:
