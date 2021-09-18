@@ -12,6 +12,8 @@ class Testlab01(unittest.TestCase):
     def test_collect_proxy(self):
         self.site = 'https://github.com/TheSpeedX/PROXY-List/blob/master/http.txt'          
         res = collect_proxy(self.site)
+        result = list(filter(lambda x : x is not None, res))
+        print(result)
 
 
     def tearDown(self) -> None:
