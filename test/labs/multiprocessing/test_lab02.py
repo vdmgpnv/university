@@ -1,7 +1,7 @@
 import unittest
 import time
 
-from lab1.multiprocessing.lab02 import collect_proxy
+from labs.multiprocessing.lab02 import collect_proxy
 
 #@unittest.skip
 class Testlab02(unittest.TestCase):

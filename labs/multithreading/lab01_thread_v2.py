@@ -21,10 +21,10 @@ def collect_proxy(url):
 
 def thread_check_proxy(proxy_list):
     with ThreadPoolExecutor(max_workers=300) as thread:
-        res = list(thread.map(abc, proxy_list))
+        res = list(thread.map(call_check_proxy, proxy_list))
         return res
     
-def abc(proxy):
+def call_check_proxy(proxy):
     if check_proxy(proxy):
         return proxy
 

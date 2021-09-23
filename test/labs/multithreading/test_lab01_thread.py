@@ -1,7 +1,7 @@
 import unittest
 import time
 
-from lab1.multithreading.lab01_thread import collect_proxy
+from labs.multithreading.lab01_thread import collect_proxy
 
 @unittest.skip
 class Testlab01(unittest.TestCase):
