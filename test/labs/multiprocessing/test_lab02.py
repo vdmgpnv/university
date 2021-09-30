@@ -3,7 +3,7 @@ import time
 
 from labs.multiprocessing.lab02 import collect_proxy
 
-#@unittest.skip
+@unittest.skip
 class Testlab02(unittest.TestCase):
     def setUp(self) -> None:
         self.start_time = time.time()
@@ -14,6 +14,7 @@ class Testlab02(unittest.TestCase):
         res = collect_proxy(self.site)
         result = list(filter(lambda x : x is not None, res))
         print(result)
+
 
 
     def tearDown(self) -> None:
