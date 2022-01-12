@@ -26,7 +26,7 @@ def check_proxy(proxy):
         except Exception as x:
             print('Proxy: ' + proxy + ' doesnt work' )
             return False
-        return True
+        
 
 
 def collect_proxy(url):

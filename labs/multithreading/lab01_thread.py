@@ -13,11 +13,13 @@ def check_proxy(proxy):
     session = get_session()
     with session:
         try:
-            session.get('https://www.google.ru', proxies={"https": "https://" + proxy}, timeout=5)
+            r = session.get('https://www.google.ru', proxies={"https": "https://" + proxy}, timeout=5)
+            if r.status_code == requests.codes.ok:
+                return True
         except Exception as x:
             print('Proxy: ' + proxy + ' doesnt work' )
             return False
-        return True
+        
 
 
 def collect_proxy(url):
